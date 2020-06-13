@@ -1,0 +1,11 @@
+<posts>
+	<post op="OwPee" ttl="myTitle" desc="myDescriptiono!"></post>
+	<post op="OwPee1" ttl="myTitle1" desc="myDescriptiono1!"></post>
+	<post op="OwPee2" ttl="myTitle2" desc="myDescriptiono2!"></post>
+	<post op="OwPee3" ttl="myTitle3" desc="myDescriptiono3!"></post>
+	<post op="OwPee4" ttl="myTitle4" desc="myDescriptiono4!"></post>
+	<post op="OwPee5" ttl="myTitle5" desc="myDescriptiono5!"></post>
+	<post op="OwPee6" ttl="myTitle6" desc="myDescriptiono6!"></post>
+	<post op="OwPee7" ttl="myTitle7" desc="myDescriptiono7!"></post>
+	<post op="OwPee8" ttl="myTitle8" desc="myDescriptiono8!"></post>
+</posts>

@@ -1,0 +1,22 @@
+<accounts>
+	<account>
+		<usr>Test account</usr>
+		<pss>buykgbTUTYU8gi7iBYOVTf</pss>
+		<bio>Hello I am a person lol</bio>
+	</account>
+	<account>
+		<usr>Test account 1</usr>
+		<pss>bygUKG7YIgf6yig78o</pss>
+		<bio>Hello I am another person</bio>
+	</account>
+	<account>
+		<usr>Test account 2</usr>
+		<pss>btYIF6t5ufu7yj</pss>
+		<bio>Hello I am yet another person</bio>
+	</account>
+	<account>
+		<usr>Test account 3</usr>
+		<pss>nbgtyJVFYTUkvytj</pss>
+		<bio>Hello I am NOT a person :D</bio>
+	</account>
+</accounts>
