@@ -3,16 +3,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  
-  <input type="image" onclick="openPage('Home')" src="ftijpilogo.jpg" alt="FTIJPI" class="ftijpilogo" style="margin-top: 20px; margin-bottom: 20px;" >
+  <div class="header" id="headerBackground">
+  <input type="image" id="FTIJPIlogo" onclick="openPage('Home')" src="ftijpilogo.jpg" alt="FTIJPI" class="ftijpilogo"></input>
+  </div>
+<div class="topnav" id="myTopnav">
+<a onclick="openPage('Home', this, '#4CAF50')" id="defaultOpen">Home</a>
+<a onclick="openPage('Model Inspector', this, '4CAF50')" id="modelInsp">Model Inspector</a>
+<a onclick="openPage('Stash', this, '4CAF50')">Stash</a>
+<a onclick="openPage('About', this, '4CAF50')">About</a>
+<button class="search" type="button">Search</button>
+  <input type="text" id="srch" name="srchbox" placeholder="What are you looking for?"></input>
+  <div class="box">
+  <select name="categories" id="categories" onchange="selectCat()"></select>
+  <Label for="box" class="title" style="float: right;">Categories:</label>
+  <select name="subCategories" id="subCategories"></select>
+  <Label for="box" class="title" style="float: right;">Subcategories:</label>
+  <select>
+    <option value="none">None</option>
+    <option value="featured" selected>Featured</option>
+    <option value="moststashed">Most Stashed</option>
+    <option value="newest">Newest</option>
+    <option value="oldest">Oldest</option>
+  </select>
+  <a onclick="openNav()">Settings</a>
+  <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<fieldset style="margin: 0px 8px;">
+<div class="slidecontainer">
+  <input type="range" min="0" max="255" value="0" class="slider" id="r">
+   <output for="r" id="r_out">0</output>
+</div>
+<div class="slidecontainer"">
+  <input type="range" min="0" max="255" value="0" class="slider" id="g">
+  <output for="g" id="g_out">0</output>
+</div>
+<div class="slidecontainer"">
+  <input type="range" min="0" max="255" value="0" class="slider" id="b">
+<output for="b" id="b_out">0</output>
+</div>
 
-<button class="tablink" onclick="openPage('Home', this, '#4CAF50')" id="defaultOpen">Home</button>
-<button class="tablink" onclick="openPage('Model Inspector', this, '4CAF50')" id="modelInsp">Model Inspector</button>
-<button class="tablink" onclick="openPage('Stash', this, '4CAF50')">Stash</button>
-<button class="tablink" onclick="openPage('About', this, '4CAF50')">About</button>
+<output id="hex">#000000</output>
+</fieldset>
+
+</div>
 
 
-
+  </div>
+</div>
 
 <style> 
   
@@ -33,6 +70,106 @@ body {
   box-sizing: border-box;
   word-wrap: break-word;
   background-color: rgb(0,0,0);
+}
+
+.header {
+  background-color: #000000;
+  width: 100%;
+  height: 350px;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+}
+
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 350; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 1;
+  transition: 0.2s; /* Add a transition effect (when scrolling - and font size is decreased) */
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
 
 label[for=r], output[for=r]{
@@ -67,17 +204,34 @@ label, output{
       border: 10px solid black;
   border-radius: 5px;
     display: block;
-    margin: auto;
+    margin-left: 25%;
     width: 50%;
+     position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+   z-index: 1;
+   background-color: solid black;
 }
 
 
 .home {
-  display: inline-flex;
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+    margin-top: 450px;
     width: 100%;
     overflow: visible;
     text-align:center;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 225;
+  width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 0px;
 }
 
 .stash {
@@ -85,12 +239,13 @@ label, output{
     display: none;
     overflow: visible;
     text-align:center;
+    margin-top: 350px;
 }
 .about {
   color: black;
   display: none;
-  overflow: visible;
   padding: 50px;
+  overflow: hidden;
   text-align: center;
   background-color: #474e5d;
   color: white;
@@ -99,7 +254,6 @@ label, output{
 .inspector {
     color: black;
     display: none;
-    overflow: hidden;
     text-align:center;
 }
 
@@ -114,7 +268,7 @@ label, output{
   transition-duration: 0.4s;
   border: 2px solid #4CAF50;
   border-radius: 5px;
-  
+  float: right;
 }
 
 .search:hover {
@@ -122,89 +276,40 @@ label, output{
   color: white;
 }
 
-.box4search {
-  width: 400px;
-  height: 407px;
-border: 5px solid black;
-border-radius: 5px;
-transition: width 0.4s ease-in-out;
-background-color: #555555;
-}
+
 
 input[type=text]:focus {
-  width: 80%;
+  width: 20%;
   transition-duration: 0.4s;
    background-color: #3CBC8D;
   color: white;
 }
 
-.box4ad {
-  width: 388px;
-  height: 420px;
-border: 5px solid black;
-border-radius: 5px;
-font-size: 400%;
-background-color: #555555;
-}
 
-.contentBorder {
- 
-  width: 1010px;
-  height: 860px;
-border: 5px solid black;
-border-radius: 5px;
-background-color: #555555;
-  
-}
 
-.stasheditemsBorder {
-  width: 1843px;
-  height: 1050px;
-border: 5px solid black;
-border-radius: 5px;
-background-color: #555555;
-  
-}
 
 .stashitems {
 border: none;
-width: 1843px;
-height: 1000px;
-overflow: scroll;
+
 background-color: #474e5d;
 }
 
 input[type=text] {
-  width: 75%;
+  width: 15%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 2px solid green;
   border-radius: 4px;
   box-sizing: border-box;
+  float: right;
 }
 
-  .tablink {
-    
-  background-color: #555;
-  color: white;
-  float: left;
-  border: 5px solid black;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
-}
 
 .main {
-   padding: 16px;
-  margin-top: 30px;
+
 }
 
-.tablink:hover {
-  background-color: #777;
-}
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -212,16 +317,20 @@ input[type=text] {
   transition: 0.3s;
   border: 5px solid black;
   border-radius: 5px;
+  background-color: #f2f2f2;
+  flex: 1;
 }
 
 img {
   border-radius: 5px 5px 0 0;
+  
 }
 
 .column {
   float: left;
-  width: 33.3%;
+  width: 25%;
   margin-bottom: 16px;
+  flex: 1;
 }
 
 
@@ -257,24 +366,17 @@ img {
 }
 
 
-.posts {
-border: 5px solid black;
-width: 1000px;
-height: 800px;
-overflow: scroll;
-background-color: #474e5d;
-}
-
 .box select {
   background-color: #4CAF50;
   color: white;
-  padding: 12px;
-  width: 250px;
+  padding: 5px;
+  width: 150px;
   border: none;
   font-size: 20px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
   outline: none;
-  margin: 10px;
+  margin: 5px;
+  float: right;
 }
 
 .pagination {
@@ -363,87 +465,17 @@ background-color: #555555;
 <body>
 <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
   <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
-  <script language="javascript" type="text/javascript" src="FTIJPI_SKETCH_v4_backup.js"></script>
+  <script language="javascript" type="text/javascript" src="FTIJPI_SKETCH_v5_backup.js"></script>
   <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
 
 <div id="Home" class="home">
-  
-   <div class="box4search" style="position: absolute; margin-left: 20px; margin-top: 75px;">
-   
-   <h2 style="text-align:center">Search here for useful stuff!</h2>
-   <fieldset style="margin: 0px 8px;">
-<Label for="box" class="title">Filter by:</label>
-<div class="box">
-  <select>
-    <option value="none">None</option>
-    <option value="featured" selected>Featured</option>
-    <option value="moststashed">Most Stashed</option>
-    <option value="newest">Newest</option>
-    <option value="oldest">Oldest</option>
-  </select>
-</div>
 
-<Label for="box" class="title">Categories:</label>
-<div class="box">
-  <select name="categories" id="categories" onchange="selectCat()">
-    
-  </select>
-</div>
-
-<Label for="box" class="title">Sub Categories:</label>
-<div class="box">
-  <select name="subCategories" id="subCategories">
-  
-  </select>
-</div>
-
-<input type="text" id="srch" name="srchbox" placeholder="What are you looking for?">
-
-</fieldset>
-
-<button class="search" type="button">Search</button>
-</form>
-   
-   <div class="box4search" style="position: absolute; margin-top: 20px;">
-   
-  <h2>Settings</h2>
-<fieldset style="margin: 0px 8px;">
-<div class="slidecontainer">
-  <input type="range" min="0" max="255" value="0" class="slider" id="r">
-   <output for="r" id="r_out">0</output>
-</div>
-<div class="slidecontainer"">
-  <input type="range" min="0" max="255" value="0" class="slider" id="g">
-  <output for="g" id="g_out">0</output>
-</div>
-<div class="slidecontainer"">
-  <input type="range" min="0" max="255" value="0" class="slider" id="b">
-<output for="b" id="b_out">0</output>
-</div>
-</fieldset>
-
-<output id="hex">#000000</output>
-
-   </div>
-   
-   </div>
-   <div class="contentBorder" style="position: absolute; margin-left: 443px; margin-top: 75px;">
-   <div class="pagination" style="margin-top: 8px; margin-bottom: 8px;">
-  <a href="#">&laquo;</a>
-  <a href="#" class="active">1</a>
-  <a href="#">2</a>
-  <a href="#">3</a>
-  <a href="#">4</a>
-  <a href="#">5</a>
-  <a href="#">6</a>
-  <a href="#">&raquo;</a>
-</div>
- <div class="posts" style="">
+ <div style="">
  
  <div class="row">
       <div class="column">
         <div class="card">
-          <img src="post.jpg" alt="First post" style="width:100%;">
+          <img src="post.jpg" alt="First post" style="width: 100%;">
             <div class="container">
               <h2><p id="opName"></p></h2>
               <p class="title" id="postTitle"></p>
@@ -568,18 +600,19 @@ background-color: #555555;
          </div> 
         </div>
         
-        </div>
+       <div class="pagination" style="margin-top: 8px; margin-bottom: 8px;">
+  <a href="#">&laquo;</a>
+  <a href="#" class="active">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
         
 </div>
 
-<div class="box4ad" style="position: absolute; margin-left: 1476px; margin-top: 75px;">
-
-<pre>Recommended
- products
- displayed
- right hea
- maayyynnn</pre>
-</div>
 
 </div>
 
@@ -751,7 +784,7 @@ background-color: #555555;
   </div>
 </div>
 
-<div id="About" class="about">
+<div id="About" class="about" style="margin-top: 500px;">
   <h3>ABOUT FTIJPI!</h3>
   <pre>A group to share things that you'd rather just print than spend stupid amounts of money on...
 
