@@ -170,19 +170,28 @@ body {
     display: block;
     text-align: left;
   }
-  
-  .column {
-   width: 100%; 
+  .row {
+   flex-direction: column; 
   }
 }
-  
-  @media screen and (max-width: 992px) {
-    
-    .column {
-   width: 50%; 
+
+@media screen and (max-width: 992px) {
+  .column {
+   flex: 50%;
   }
-    
-  }
+}
+
+.row {
+ display: flex;
+ flex-wrap: wrap;
+}
+
+.column {
+  float: left;
+  flex: 25%;
+  margin-bottom: 16px;
+
+}
 
 label[for=r], output[for=r]{
   background-color: #f00;
@@ -336,13 +345,6 @@ input[type=text] {
 img {
   border-radius: 5px 5px 0 0;
   
-}
-
-.column {
-  float: left;
-  width: 25%;
-  margin-bottom: 16px;
-  flex: 1;
 }
 
 
