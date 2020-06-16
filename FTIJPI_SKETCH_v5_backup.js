@@ -433,7 +433,7 @@ var sticky = header.offsetTop;
 
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
-  if (window.pageYOffset > sticky - 300) {
+  if (window.pageYOffset > sticky) {
     header.classList.add("sticky");
     document.getElementById("FTIJPIlogo").src = "ftijpilogo_cut.jpg";
     document.getElementById("headerBackground").style.height = "225px";
