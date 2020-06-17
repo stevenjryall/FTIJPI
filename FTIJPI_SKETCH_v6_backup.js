@@ -1,4 +1,6 @@
-let cam;
+
+
+  let cam;
 let delta = 0.001;
 let ed;
 let rotXAmount = 180;
@@ -46,7 +48,9 @@ function preload() {
 }
 
 window.onload = function() {
-
+  
+  createHome();
+  
   body = document.body, 
     r = document.querySelector('#r'), 
     g = document.querySelector('#g'), 
@@ -95,7 +99,7 @@ window.onload = function() {
 };
 
 function setup() {
-
+  
   categoryList = document.getElementById("categories");
   subCategoryList = document.getElementById("subCategories");
 
@@ -122,7 +126,7 @@ function setup() {
   subCategoryList.selectedIndex = "0";
 
   selectCat();
-
+ 
   const opList = document.querySelectorAll("#opName");
   const opArray = [...opList];
 
@@ -145,11 +149,9 @@ function setup() {
 
     currentDesc[i] = postsList[i].getString('desc');
     descArray[i].innerHTML = currentDesc[i];
-    
-    
-    
+   
   }
-
+  
 
   canvas = createCanvas(windowWidth / 2, windowHeight / 2, WEBGL);
   canvas.position(windowWidth/ 4, windowHeight / 4 + 175);
@@ -180,6 +182,7 @@ function setup() {
   colorChange.position(windowWidth / 4 + 830, windowHeight / 4 + 650);
 
   document.getElementById("defaultOpen").click();
+ 
 }
 
 function draw() {
@@ -452,4 +455,114 @@ function openNav() {
 /* Set the width of the side navigation to 0 */
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
+}
+
+
+function createHome(){
+  let mainDiv = null;
+  let my_div = null;
+  let pagination = null;
+let row = null;
+let column = null;
+let card = null;
+let postImage = null;
+let container = null;
+let opNameHere = null;
+let titleHere = null;
+let descHere = null;
+let modelButton = null;
+let modelButtonContainer = null;
+let stashButton = null;
+let stashButtonContainer = null;
+let downloadButton = null;
+let downloadButtonContainer = null;
+let sq = null;
+var imageName = ["post.jpg", "post2.jpg", "post3.jpg", "post.jpg", "post2.jpg", "post3.jpg", "post.jpg", "post2.jpg", "post3.jpg", "post.jpg", "post2.jpg", "post3.jpg"];
+let noOfResults = 12;
+
+  // create a new div element
+  // and give it some content
+  mainDiv = document.createElement('div');
+  mainDiv.setAttribute('id', 'Home');
+  mainDiv.setAttribute('class', 'home');
+  
+  toolbar = document.getElementById("toolbar");
+  mainDiv.appendChild(toolbar);
+  
+  row = document.createElement('div');
+  row.setAttribute('class', 'row');
+  
+  mainDiv.appendChild(row);
+
+  for(i = 0; i < noOfResults; i++){
+    
+    column = document.createElement('div');
+    column.setAttribute('class', 'Column');
+    mainDiv.appendChild(column);
+    
+    row.appendChild(column);
+    
+    card = document.createElement('div');
+    card.setAttribute('class', 'Card');
+    
+    column.appendChild(card);
+    
+    postImage = document.createElement('img');
+    postImage.setAttribute('src', imageName[i]);
+    postImage.setAttribute('alt', 'First post');
+    postImage.setAttribute('style', 'width: 100%');
+    
+    container = document.createElement('div');
+    container.setAttribute('class', 'container');
+    
+    opNameHere = document.createElement('h2');
+    opNameHere.setAttribute('id', 'opName');
+    
+    titleHere = document.createElement('p');
+    titleHere.setAttribute('class', 'title');
+    titleHere.setAttribute('id', 'postTitle');
+    
+    descHere = document.createElement('p');
+    descHere.setAttribute('id', 'postDesc');
+    
+    modelButtonContainer = document.createElement('p');
+    modelButton = document.createElement('button');
+    modelButton.innerHTML = "Model Inspector";
+    modelButton.setAttribute('onclick','openPage(\'Model Inspector\')');
+    modelButton.setAttribute('class','button');
+    modelButtonContainer.appendChild(modelButton);
+    
+     stashButtonContainer = document.createElement('p');
+     stashButton = document.createElement('button');
+    stashButton.innerHTML = "Stash it";
+    stashButton.setAttribute('onclick','openPage(\'Stash\')');
+    stashButton.setAttribute('class','button');
+    stashButtonContainer.appendChild(stashButton);
+    
+     downloadButtonContainer = document.createElement('p');
+     downloadButton = document.createElement('button');
+    downloadButton.innerHTML = "Download";
+    downloadButton.setAttribute('class','button');
+    downloadButtonContainer.appendChild(downloadButton);
+    
+    card.appendChild(postImage);
+    card.appendChild(container);
+    container.appendChild(opNameHere);
+    container.appendChild(titleHere);
+    container.appendChild(descHere);
+    container.appendChild(modelButtonContainer);
+    container.appendChild(stashButtonContainer);
+    container.appendChild(downloadButtonContainer);
+    
+  }
+  
+
+  pagination = document.getElementById("pagination");
+  
+  mainDiv.appendChild(pagination);
+  
+  // add the newly created element and it's content into the DOM
+  my_div = document.getElementById("div1");
+  document.body.insertBefore(mainDiv, my_div); 
+  
 }
