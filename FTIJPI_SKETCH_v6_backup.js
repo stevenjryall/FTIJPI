@@ -1,6 +1,4 @@
-
-
-  let cam;
+let cam;
 let delta = 0.001;
 let ed;
 let rotXAmount = 180;

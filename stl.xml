@@ -1,28 +1,11 @@
-<categories>
-	<category>All</category>
-	<category>Fixes</category>
-		<subCategory id="Fixes">Home</subCategory>
-		<subCategory id="Fixes">Attachments</subCategory>
-	<category>Cheaper Versions</category>
-		<subCategory id="Cheaper Versions">Products</subCategory>
-	<category>Disability</category>
-		<subCategory id="Disability">Human</subCategory>
-		<subCategory id="Disability">Animals</subCategory>
-	<category>Mods</category>
-		<subCategory id="Mods">Printer Mods</subCategory>
-	<category>Learning</category>
-		<subCategory id="Learning">Biology</subCategory>
-		<subCategory id="Learning">Physics</subCategory>
-		<subCategory id="Learning">Mathematics</subCategory>
-		<subCategory id="Learning">Electronics</subCategory>
-	<category>Tools</category>
-		<subCategory id="Tools">Unique Tools</subCategory>
-	<category>Hobby</category>
-		<subCategory id="Hobby">Robots</subCategory>
-		<subCategory id="Hobby">Rc cars</subCategory>
-		<subCategory id="Hobby">Drones</subCategory>
-	<category>Just For Fun</category>
-		<subCategory id="Just For Fun">Toys</subCategory>
-		<subCategory id="Just For Fun">Games</subCategory>
-		<subCategory id="Just For Fun">F**k it...</subCategory>
-</categories>
+<stls>
+	<file name="file1"></file>
+	<file name="file2"></file>
+	<file name="file3"></file>
+	<file name="file4"></file>
+	<file name="file5"></file>
+	<file name="file6"></file>
+	<file name="file7"></file>
+	<file name="file8"></file>
+	<file name="file9"></file>
+</stls>
