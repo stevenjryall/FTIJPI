@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <div class="header" id="headerBackground">
   <input type="image" id="FTIJPIlogo" onclick="openPage('Home')" src="ftijpilogo.jpg" alt="FTIJPI" class="ftijpilogo"></input>
   </div>
@@ -495,14 +495,13 @@ background-color: #555555;
 <body>
 <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
   <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
-  <script language="javascript" type="text/javascript" src="FTIJPI_SKETCH_v5_backup.js"></script>
+  <script language="javascript" type="text/javascript" src="FTIJPI_SKETCH_v6_backup.js"></script>
   <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
-
-<div id="Home" class="home">
-
- <div style="">
+  
  
-  <div class="box">
+<div id="toolbar" style="">
+
+<div class="box">
   <Label for="box" class="title" style="">Filter by:</label>
   <select>
     <option value="none">None</option>
@@ -517,137 +516,11 @@ background-color: #555555;
   <select name="subCategories" id="subCategories"></select>
   
   </div>
- 
- <div class="row">
-      <div class="column">
-        <div class="card">
-          <img src="post.jpg" alt="First post" style="width: 100%;">
-            <div class="container">
-              <h2><p id="opName"></p></h2>
-              <p class="title" id="postTitle"></p>
-              <p id="postDesc"></p>
-              <p><button onclick="openPage('Model Inspector')" class="button">Model Inspector</button></p>
-              <p><button onclick="openPage('Stash')" class="button">Stash</button></p>
-              <p><button class="button" >Download</button></p>
-            </div>  
-          </div>
-         </div>  
-
-      <div class="column">
-        <div class="card">
-          <img src="post2.jpg" alt="Second post" style="width:100%;">
-            <div class="container">
-              <h2><p id="opName"></p></h2>
-              <p class="title" id="postTitle"></p>
-              <p id="postDesc"></p>
-              <p><button onclick="openPage('Model Inspector')" class="button">Model Inspector</button></p>
-              <p><button onclick="openPage('Stash')" class="button">Stash</button></p>
-              <p><button class="button">Download</button></p>
-            </div>  
-          </div>
-         </div>  
- 
-      <div class="column">
-        <div class="card">
-          <img src="post3.jpg" alt="Second post" style="width:100%">
-            <div class="container">
-              <h2><p id="opName"></p></h2>
-              <p class="title" id="postTitle"></p>
-              <p id="postDesc"></p>
-             <p><button onclick="openPage('Model Inspector')" class="button">Model Inspector</button></p>
-              <p><button onclick="openPage('Stash')" class="button">Stash</button></p>
-              <p><button class="button">Download</button></p>
-            </div>  
-          </div>
-         </div> 
-         
-          <div class="column">
-        <div class="card">
-          <img src="post.jpg" alt="First post" style="width:100%">
-            <div class="container">
-              <h2><p id="opName"></p></h2>
-              <p class="title" id="postTitle"></p>
-              <p id="postDesc"></p>
-              <p><button onclick="openPage('Model Inspector')" class="button">Model Inspector</button></p>
-              <p><button onclick="openPage('Stash')" class="button">Stash</button></p>
-              <p><button class="button">Download</button></p>
-            </div>  
-          </div>
-         </div>  
-
-      <div class="column">
-        <div class="card">
-          <img src="post2.jpg" alt="Second post" style="width:100%">
-            <div class="container">
-              <h2><p id="opName"></p></h2>
-              <p class="title" id="postTitle"></p>
-              <p id="postDesc"></p>
-              <p><button onclick="openPage('Model Inspector')" class="button">Model Inspector</button></p>
-              <p><button onclick="openPage('Stash')" class="button">Stash</button></p>
-              <p><button class="button">Download</button></p>
-            </div>  
-          </div>
-         </div>  
- 
-      <div class="column">
-        <div class="card">
-          <img src="post3.jpg" alt="Second post" style="width:100%">
-            <div class="container">
-              <h2><p id="opName"></p></h2>
-              <p class="title" id="postTitle"></p>
-              <p id="postDesc"></p>
-             <p><button onclick="openPage('Model Inspector')" class="button">Model Inspector</button></p>
-              <p><button onclick="openPage('Stash')" class="button">Stash</button></p>
-              <p><button class="button">Download</button></p>
-            </div>  
-          </div>
-         </div> 
-         
-         <div class="column">
-        <div class="card">
-          <img src="post.jpg" alt="First post" style="width:100%">
-            <div class="container">
-            <h2><p id="opName"></p></h2>
-              <p class="title" id="postTitle"></p>
-              <p id="postDesc"></p>
-              <p><button onclick="openPage('Model Inspector')" class="button">Model Inspector</button></p>
-              <p><button onclick="openPage('Stash')" class="button">Stash</button></p>
-              <p><button class="button">Download</button></p>
-            </div>  
-          </div>
-         </div>  
-
-      <div class="column">
-        <div class="card">
-          <img src="post2.jpg" alt="Second post" style="width:100%">
-            <div class="container">
-             <h2><p id="opName"></p></h2>
-              <p class="title" id="postTitle"></p>
-              <p id="postDesc"></p>
-              <p><button onclick="openPage('Model Inspector')" class="button">Model Inspector</button></p>
-              <p><button onclick="openPage('Stash')" class="button">Stash</button></p>
-              <p><button class="button">Download</button></p>
-            </div>  
-          </div>
-         </div>  
- 
-      <div class="column">
-        <div class="card">
-          <img src="post3.jpg" alt="Second post" style="width:100%">
-            <div class="container">
-             <h2><p id="opName"></p></h2>
-              <p class="title" id="postTitle"></p>
-              <p id="postDesc"></p>
-              <p><button onclick="openPage('Model Inspector')" class="button">Model Inspector</button></p>
-              <p><button onclick="openPage('Stash')" class="button">Stash</button></p>
-              <p><button class="button">Download</button></p>
-            </div>  
-          </div>
-         </div> 
-        </div>
-        
-       <div class="pagination" style="margin-top: 8px; margin-bottom: 8px;">
-  <a href="#">&laquo;</a>
+  </div>
+  
+<div id="pagination">
+ <div class="pagination" style="margin-top: 8px; margin-bottom: 8px;">
+ <a href="#">&laquo;</a>
   <a href="#" class="active">1</a>
   <a href="#">2</a>
   <a href="#">3</a>
@@ -656,11 +529,8 @@ background-color: #555555;
   <a href="#">6</a>
   <a href="#">&raquo;</a>
 </div>
-        
 </div>
-
-
-</div>
+<div id="div1"></div>
 
 <div id="Model Inspector" class="inspector">
 
@@ -679,9 +549,6 @@ background-color: #555555;
   <a href="#"><i class="fa fa-facebook"></i></a>
   <a href="#"><i class="fa fa-instagram"></i></a>
   <p><button class="button">Contact</button></p>
-</div>
-
-<div class="biography" style="position: absolute; margin-left: 350px; margin-top: 75px">
 </div>
 
 <div class="stasheditemsBorder" style="position: absolute; margin-left: 20px; margin-top: 550px;">
